@@ -11,7 +11,7 @@ const loadBtn = document.querySelector('.button-load');
 const submitBtn = document.querySelector('.button-submit');
 
 let name = searchQuery.value;
-let perPage = 20;
+let perPage = 40;
 let page = 0;
 
 const URL = 'https://pixabay.com/api';
