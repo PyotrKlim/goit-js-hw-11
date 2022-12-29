@@ -6,13 +6,12 @@ import axios from 'axios';
 
 var lightbox = new SimpleLightbox('.gallery a', {});
 const searchQuery = document.querySelector('input[name="searchQuery"]');
-// const searchForm = document.querySelector('.search-form');
 const cardList = document.querySelector('.gallery');
 const loadBtn = document.querySelector('.button-load');
 const submitBtn = document.querySelector('.button-submit');
 
 let name = searchQuery.value;
-let perPage = 40;
+let perPage = 20;
 let page = 0;
 
 const URL = 'https://pixabay.com/api';
@@ -34,8 +33,8 @@ async function fetchImages(name, page) {
 
 function renderGallery(name) {
   const renderList = name.hits.map(hit => hit);
-
   const markup = galleryCard(renderList);
+
   cardList.insertAdjacentHTML('beforeend', markup);
   lightbox.refresh();
 }
